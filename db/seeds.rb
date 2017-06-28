@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+3.times do |node|
+  Node.create(title: Faker::Hacker.say_something_smart)
+end
+
+3.times do |node|
+  Node.create(title: Faker::Hacker.say_something_smart, parent_id: 1)
+end
+
+3.times do |node|
+  Node.create(title: Faker::Hacker.say_something_smart, parent_id: 2)
+end
+
+3.times do |node|
+  Node.create(title: Faker::Hacker.say_something_smart, parent_id: 3)
+end
