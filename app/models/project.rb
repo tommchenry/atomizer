@@ -1,0 +1,3 @@
+class Project < Node
+
+end
