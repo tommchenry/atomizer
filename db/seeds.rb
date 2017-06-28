@@ -7,17 +7,17 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 3.times do |node|
-  Node.create(title: Faker::Hacker.say_something_smart)
+  Node.create(title: Faker::Hacker.say_something_smart, description: Faker::TwinPeaks.quote)
 end
 
 3.times do |node|
-  Node.create(title: Faker::Hacker.say_something_smart, parent_id: 1)
+  Node.create(title: Faker::Hacker.say_something_smart, parent_id: 1, description: Faker::TwinPeaks.quote)
 end
 
 3.times do |node|
-  Node.create(title: Faker::Hacker.say_something_smart, parent_id: 2)
+  Node.create(title: Faker::Hacker.say_something_smart, parent_id: 2, description: Faker::TwinPeaks.quote)
 end
 
 3.times do |node|
-  Node.create(title: Faker::Hacker.say_something_smart, parent_id: 3)
+  Node.create(title: Faker::Hacker.say_something_smart, parent_id: 3, description: Faker::TwinPeaks.quote)
 end
