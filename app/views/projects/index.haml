@@ -1,0 +1,8 @@
+%div.main
+  %ul
+    -@projects.each do |project|
+      %li
+        %h4=link_to project.title, new_project_path(parent_id: project.id), method: :get
+        %p=project.description
+%div.sidebar
+  %h2=@today.title
