@@ -6,22 +6,25 @@ class ProjectsController < ApplicationController
 
   def new
     @parent_id = params[:parent_id]
-    @project = Project.new
+    @projects = []
+    5.times do
+      @projects << Project.new
+    end
   end
 
   def create
-    @project = Project.new(project_params)
-    unless @project.save
-      flash[:notice] = "Project not created successfully."
-      flash[:color] = "valid"
+    params["projects"].each do |project|
+      if project["title"] != ""
+        Project.create(project_params(project))
+      end
     end
     redirect_to root_path
   end
 
   private
 
-  def project_params
-    params.require(:project).permit(:title, :description, :parent_id)
+  def project_params(my_params)
+    my_params.permit(:title, :description, :parent_id)
   end
 
 end

@@ -1,5 +1,10 @@
-=form_for @project do |f|
-  =f.text_field :title
-  =f.text_field :description
-  =f.hidden_field :parent_id, value: @parent_id
-  =f.submit
+=form_tag projects_path do
+  - @projects.each do |project|
+    =fields_for 'projects[]', project do |p|
+      %ul
+        %li=p.label :title
+        %li=p.text_field :title
+        %li=p.label :description
+        %li=p.text_field :description
+      =p.hidden_field :parent_id, value: @parent_id
+  =submit_tag
